@@ -31,3 +31,29 @@ SELECT first_name,last_name, job_id, salary
        ElSE salary END REVISED_SALARY --case for only one column
        ,DECODE(Job_id,'IT_PROG',1.1*SALARY,'ST_CLREK', 1.15*SALARY,'SA_REP',SALARY*1.2,salary) as DECODE
 From employees;
+
+Select exam_type
+      ,case exam_type when 'MCE' THEN 'OBJECTIVE'
+                      when 'TF' THEN 'OBJECTIVE'
+                      when 'FIB' THEN 'OBJECTIVE'
+                      when 'ESS' THEN 'SUBJECTIVE'
+                      when 'SA' THEN 'SUBJECTIVE'
+                      when 'PS' THEN 'ANALYTICAL'
+                      when 'LAB' THEN 'PRACTICAL'
+        ELSE 'NOT PERMITTED' END "Nature of Exam"
+From ad_exam_type;
+
+Select student_id, marks
+       ,case when marks<60 then 'fail'
+            when marks between 60 and 70 then 'satisfactory'
+            when marks between 70 and 80 then 'good'
+            when marks between 80 and 90 then 'very good'
+            when marks>90 then 'excellent'
+        else 'error' end "Grade Remark"
+From ad_exam_results;
+
+Select exam_type
+      ,decode(exam_type,'MCE','OBJECTIVE','TF','OBJECTIVE','FIB','OBJECTIVE','ESS','SUBJECTIVE','SA',
+      'SUBJECTIVE','PS','ANALYTICAL','LAB','PRACTICAL','NOT PERMITTED') "Nature of Exam"
+From ad_exam_type;
+
