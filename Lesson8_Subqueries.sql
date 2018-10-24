@@ -36,4 +36,16 @@ Having min(salary) > (Select min(salary)
                       From employees
                       WHere department_id=80);
                       
+Select department_name, count(employee_id)
+From departments d
+Left Join employees e on (d.department_id=e.department_id)
+Group by department_name
+Having count(employee_id) >0
+Order by 2 desc;
+
+Select *
+From employees
+where salary in (Select min(salary)
+                 From employees
+                 Group by department_id);
 
