@@ -157,3 +157,5 @@ Select *
 From employees
 Where employee_id in ('101','176','200');
 
+Select *
+From employees;
