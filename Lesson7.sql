@@ -164,3 +164,4 @@ Select first_Name, round((sysdate-student_reg_year)/7,2) Weeks_completed
 From ad_student_details
 where email_addr is null
 order by weeks_completed desc;
+
