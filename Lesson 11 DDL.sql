@@ -72,6 +72,28 @@ Create Table HR_Table_5(employee_id  NUMBER(6)
 Create table employee_old
 As Select * from employees;
 
+Create table dept80 as
+Select *
+from departments;
+
+Select * from dept80;
+
+ALTER TABLE dept80
+ADD job_id varchar2(15); 
+
+ALTER TABLE dept80
+MODIFY department_name varchar2(50);
+
+Select max(length(department_name)) from dept80;
+
+Alter table dept80
+Drop (location_id);
+
+Alter table dept80
+Set unused (manager_id, job_id);
+
+Drop table dept80;
+
 --exercitii
 --1)
 Create Table DEPT ( ID     Number(7) CONSTRAINT dept_ID Primary Key
